@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
+            <h3>Create a new listings</h3>
+            <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" class="form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter a title.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="Description" class="form-label">Description</label>
+                    <textarea type="text" name="listing[description]" id="" class="form-control" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter a Description.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image-link" class="form-label">Uplod Image file</label>
+                    <input type="file" name="listing[image]" id="" class="form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Uplod a Images.
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="mb-3 col-md-4">
+                        <label for="Price" class="form-label">Enter Price</label>
+                        <input type="text" name="listing[price]" id="" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter The Price.
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="Countery-detail" class="form-label">Enter Country</label>
+                        <input type="text" name="listing[country]" id="" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter the Countery.
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="Location" class="form-label">Enter Location</label>
+                    <input type="text" name="listing[location]" id="" class="form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter the location where they located.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                      </label>
+                      <div class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+
+                <button class="btn btn-success mrg-top-2">Add List</button>
+
+
+            </form>
+        </div>
+    </div>
