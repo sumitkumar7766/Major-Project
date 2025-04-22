@@ -8,14 +8,26 @@ const listingSchema = new Schema({
         type: String,
         required: true,
     },
-    description: String,
+    description: {
+        type: String,
+        require: true,
+    },
     image: {
         url: String,
         filename: String,
     },
-    price: Number,
-    location: String,
-    country: String,
+    price: {
+        type: Number,
+        require: true,
+    },
+    location: {
+        type: String,
+        require: true,
+    },
+    country: {
+        type: String,
+        require: true,
+    },
     reviews: [
         {
             type: Schema.Types.ObjectId,
@@ -27,11 +39,15 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
+    categery: {
+        type: String,
+        require: true,
+    },
 });
 
 listingSchema.post("findOneAndDelete", async (listng) => {
-    if(listng){
-        await Review.deleteMany({_id: {$in: listng.reviews}})
+    if (listng) {
+        await Review.deleteMany({ _id: { $in: listng.reviews } })
     }
 })
 

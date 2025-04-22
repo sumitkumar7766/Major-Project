@@ -1,86 +1,48 @@
 <% layout("/layouts/boilerplate") %>
 
-    <style>
-        #filters {
-            display: flex;
-            align-items: center;
-        }
-
-        .filter {
-            text-align: center;
-            margin-right: 2rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-            cursor: pointer;
-        }
-
-        .filter:hover {
-            opacity: 1;
-        }
-
-        .filter p {
-            font-size: 0.8rem;
-        }
-
-        .text-info {
-            display: none;
-        }
-
-        .text-toggle {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.3rem;
-            padding-bottom: 0.3rem;
-            margin-top: 1rem;
-            border-radius: 10px;
-            border: 1px solid black;
-            margin-left: 5rem;
-        }
-
-    </style>
 
     <div id="filters">
-        <div class="filter">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
+        <div class="filter" id="All">
+            <div><i class="fa-solid fa-bars"></i></div>
+            <p>All</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Room">
             <div><i class="fa-solid fa-bed"></i></div>
             <p>Rooms</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="iconiccity">
             <div><i class="fa-solid fa-mountain-city"></i></div>
             <p>Iconic City</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="mountain">
             <div><i class="fa-solid fa-mountain-sun"></i></div>
             <p>Mountain</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Castel">
             <div><i class="fa-brands fa-fort-awesome"></i></div>
             <p>Castles</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Pools">
             <div><i class="fa-solid fa-person-swimming"></i></div>
             <p>Amazings Pools</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Camping">
             <div><i class="fa-solid fa-campground"></i></div>
             <p>Camping</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Farms">
             <div><i class="fa-solid fa-tractor"></i></div>
             <p>Farms</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Arctic">
             <div><i class="fa-solid fa-snowflake"></i></div>
             <p>Arctic</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Domes">
             <div><i class="fa-solid fa-igloo"></i></div>
             <p>Domes</p>
         </div>
-        <div class="filter">
+        <div class="filter" id="Boats">
             <div><i class="fa-solid fa-sailboat"></i></div>
             <p>Boats</p>
         </div>
@@ -95,7 +57,7 @@
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mt-3">
         <% for (listing of allListings) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card col listing-card">
+                <div class="card col listing-card show-cradsforcategree">
                     <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
                     <div class="card-img-overlay"></div>
                     <div class="card-body">
@@ -103,23 +65,12 @@
                             <b>Title : <%= listing.title %></b><br>
                             Price : ₹ <%= listing.price %> / night
                                 <i class="text-info"> &nbsp; &nbsp; +18% GST</i>
+                                <p class="valcategree" data-category="<%= listing.categery %>" style="display: none;">
+                                    <%= listing.categery %>
+                                </p>
                         </p>
                     </div>
                 </div>
             </a>
             <% } %>
     </div>
-
-    <script>
-        let taxSwitch = document.getElementById("switchCheckDefault");
-        taxSwitch.addEventListener("click", () => {
-            let taxIndo = document.getElementsByClassName("text-info");
-            for (info of taxIndo) {
-                if (info.style.display != "inline") {
-                    info.style.display = "inline";
-                }else {
-                    info.style.display = "none";
-                }
-            }
-        })
-    </script>

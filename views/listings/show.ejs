@@ -21,6 +21,8 @@
                 </p>
                 <p class="card-text">Location: <%= listing.location %>
                 </p>
+                <p class="card-text">categery: <%= listing.categery %>
+                </p>
             </div>
         </div>
         <% if(currentUser && listing.owner._id.equals(currentUser._id)) { %>
