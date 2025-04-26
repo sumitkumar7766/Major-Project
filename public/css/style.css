@@ -126,6 +126,8 @@ body {
 #filters {
     display: flex;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .filter {
@@ -161,4 +163,128 @@ body {
 
 #All {
     margin-left: 1rem;
+}
+
+.btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+}
+.btn-search:hover {
+    background-color: #fe424d;
+    color: #fff;
+}
+.btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+.search-ipt {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+}
+
+.leftnavbutton {
+    display: none;
+}
+
+#searchelement {
+    display: none;
+}
+
+.form-switch {
+    width: 250px !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+@media (max-width: 428px) {
+    #filters {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .form-switch {
+        width: 250px !important;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #navbarNavAltMarkup {
+        background-color: white !important;
+    }
+
+    #searchelement {
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        width: 250px !important;
+    }
+
+    #searchbtn {
+        width: 40px;
+        text-align: center;
+    }
+
+    #searchelement11 {
+        display: none;
+    }
+
+    #listingtital {
+        width: 300px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .offset-3 {
+        margin-left: 30px !important;
+    }
+
+    .col-6 {
+        width: 90% !important;
+        height: auto !important;
+    }
+    
+    .col-8 {
+        width: 90% !important;
+    }
+
+    .row>* {
+        width: 350px !important;
+    }
+
+    #rowalignbyid {
+        width: 400px !important;
+        margin-left: 5px !important;
+    }
+
+    #rowalignimage {
+        width: 115%;
+    }
+
+    
+}
+
+@media (max-width: 767px) {
+    #navbarNavAltMarkup {
+        background-color: white !important;
+    }
+
+    #searchelement {
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        width: 300px;
+    }
+
+    #searchbtn {
+        width: 40px;
+        text-align: center;
+    }
+
+    #searchelement11 {
+        display: none;
+    }
 }

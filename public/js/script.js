@@ -59,3 +59,48 @@ allFilter.addEventListener("click", () => {
   div.parentElement.style.display = "block"; // Show all parent row divs
   });
 });
+
+//sliding the sarch filter
+const filterlogo = document.getElementById("filters");
+
+let isDragging = false;
+let startX, scrollLeft;
+
+filterlogo.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - filterlogo.offsetLeft;
+  scrollLeft = filterlogo.scrollLeft;
+});
+
+filterlogo.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
+
+filterlogo.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+filterlogo.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - filterlogo.offsetLeft;
+  const walk = (x - startX) * 2; // Adjust the multiplier for sensitivity
+  filterlogo.scrollLeft = scrollLeft - walk;
+});
+
+filterlogo.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].pageX - filterlogo.offsetLeft;
+  scrollLeft = filterlogo.scrollLeft;
+});
+
+filterlogo.addEventListener("touchend", () => {
+  isDragging = false;
+});
+
+filterlogo.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].pageX - filterlogo.offsetLeft;
+  const walk = (x - startX) * 2; // Adjust the multiplier for sensitivity
+  filterlogo.scrollLeft = scrollLeft - walk;
+});
